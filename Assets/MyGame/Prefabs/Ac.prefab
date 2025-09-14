@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 8d304d7c7795d3d4789a90886a2a9dea, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: aa753a536d3d9b843b12b0c44507168f, type: 2}
     - target: {fileID: 919132149155446097, guid: 8d304d7c7795d3d4789a90886a2a9dea, type: 3}
       propertyPath: m_Name
       value: AC_Indoor_low
