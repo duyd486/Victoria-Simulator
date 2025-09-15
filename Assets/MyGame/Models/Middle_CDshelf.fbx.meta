@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: CDshelf_texture
     second: {fileID: 2100000, guid: d445eb91d1858cd4d9f0cb073e87a4db, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wood_bookshelf_texure
+    second: {fileID: 2800000, guid: af858a4d12a202e4486686b7c6c54d16, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

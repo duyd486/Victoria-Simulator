@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1183949173484402290}
+  - component: {fileID: 1661436067911574294}
   m_Layer: 0
   m_Name: SimpleCDshelf
   m_TagString: Untagged
@@ -32,6 +33,18 @@ Transform:
   - {fileID: 312652292300567513}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1661436067911574294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6685517488202175962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f5b80c0dcc6a640b917484d6807d64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &278232409721541682
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -103,10 +116,39 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6226c37b58c4a7342849a3951a151e94, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 796080888408111747}
   m_SourcePrefab: {fileID: 100100000, guid: 6226c37b58c4a7342849a3951a151e94, type: 3}
 --- !u!4 &312652292300567513 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6226c37b58c4a7342849a3951a151e94, type: 3}
   m_PrefabInstance: {fileID: 278232409721541682}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1089047811543607651 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6226c37b58c4a7342849a3951a151e94, type: 3}
+  m_PrefabInstance: {fileID: 278232409721541682}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &796080888408111747
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089047811543607651}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0202, y: 0.020200005, z: 0.10622923}
+  m_Center: {x: -0.00009999982, y: -0.00009999985, z: -0.03071462}
