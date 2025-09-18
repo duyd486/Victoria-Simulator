@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class CdSingleUI : MonoBehaviour
@@ -26,8 +27,13 @@ public class CdSingleUI : MonoBehaviour
     public void UpdateCd(Song song)
     {
         if (song == null) return;
+
         this.song = song;
         songNameTxt.text = song.songName;
+
+        Sprite thumnailSprite = Sprite.Create( song.thumbnail, new Rect(0, 0, song.thumbnail.width, song.thumbnail.height), new Vector2(0.5f, 0.5f));
+        thumbnailBtn.image.sprite = thumnailSprite;
+
         Show();
     }
     public void Show()
