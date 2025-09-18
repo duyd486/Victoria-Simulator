@@ -4,22 +4,14 @@ using UnityEngine.Audio;
 
 public class CdShelf : MonoBehaviour, IInteractable
 {
-
-    [SerializeField] private string artistName;
-    [SerializeField] private string[] songNameArr;
+    [SerializeField] private Artist shelfArtist;
     
 
     public void Interact()
     {
-        if(artistName.Length > 0)
+        if(shelfArtist.artistName.Length > 0)
         {
-            Debug.Log(artistName);
-            foreach(string name in songNameArr)
-            {
-                Debug.Log(name);
-                PlayerInteract.Instance.SetSongName(name);
-                PlayerInteract.Instance.SetCd(Resources.Load<Texture2D>(name));
-            }
+            CdPickerUI.Instance.Show(shelfArtist);
         }
         else
         {

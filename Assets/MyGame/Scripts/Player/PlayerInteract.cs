@@ -6,9 +6,11 @@ public class PlayerInteract : MonoBehaviour
     public static PlayerInteract Instance { get; private set; }
 
     [SerializeField] private float maxDistance = 6f;
-    private bool canInteract = false;
+    [SerializeField] private bool canInteractObject = false;
 
-    [SerializeField] private string songName;
+    [SerializeField] public bool canInteract = true;
+
+    [SerializeField] private Song song;
 
     [SerializeField] private Renderer cd;
     
@@ -25,7 +27,10 @@ public class PlayerInteract : MonoBehaviour
 
     private void Update()
     {
-        HandleInteract();
+        if(canInteract)
+        {
+            HandleInteract();
+        }
     }
 
     private void HandleInteract()
@@ -37,39 +42,41 @@ public class PlayerInteract : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit, maxDistance) && hit.transform.GetComponentInParent<IInteractable>() != null)
         {
-            canInteract = true;
+            canInteractObject = true;
             if (Input.GetKeyDown(KeyCode.E))
             {
                 hit.transform.GetComponentInParent<IInteractable>().Interact();
             }
         } else
         {
-            canInteract = false;
+            canInteractObject = false;
         }
     }
 
     public string GetSongName()
     {
-        return songName;
+        return song.songName;
     }
 
-    public void SetSongName(string name)
+    public void SetCd(Song song)
     {
-        songName = name;
-    }
-
-    public void SetCd(Texture2D tex)
-    {
-        if (tex != null)
+        this.song = song;
+        if (song.thumbnail != null)
         {
             ShowCd();
-            cd.material.mainTexture = tex;
+            cd.material.mainTexture = song.thumbnail;
+            CdPickerUI.Instance.Hide();
             Debug.Log("Loaded cover from Resources!");
         }
         else
         {
             Debug.LogError("Không tìm thấy ảnh cover trong Resources/");
         }
+    }
+
+    public void SetInteractable(bool canInter)
+    {
+        canInteract = canInter; 
     }
 
     public void HideCd()
