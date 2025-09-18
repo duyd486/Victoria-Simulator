@@ -90,6 +90,6 @@ public class PlayerInteract : MonoBehaviour
 
     public bool GetCanInteract()
     {
-        return canInteract;
+        return canInteractObject;
     }
 }
