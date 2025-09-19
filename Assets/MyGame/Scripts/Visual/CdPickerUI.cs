@@ -38,8 +38,9 @@ public class CdPickerUI : MonoBehaviour
 
     public void Show(Artist artist)
     {
-        PlayerInteract.Instance.SetInteractable(false);
         if (artist == null) return;
+        PlayerInteract.Instance.SetInteractable(false);
+        PlayerLocomotion.Instance.SetCanMove(false);
         Cursor.lockState = CursorLockMode.None;
         gameObject.SetActive(true);
         artistNameTxt.text = artist.artistName;
@@ -52,6 +53,7 @@ public class CdPickerUI : MonoBehaviour
     public void Hide()
     {
         PlayerInteract.Instance.SetInteractable(true);
+        PlayerLocomotion.Instance.SetCanMove(true);
         gameObject.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         OnCancelClick?.Invoke(this, EventArgs.Empty);

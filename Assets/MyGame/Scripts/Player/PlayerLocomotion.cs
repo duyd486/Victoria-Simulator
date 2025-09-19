@@ -4,17 +4,24 @@ using UnityEngine;
 
 public class PlayerLocomotion : MonoBehaviour
 {
+    public static PlayerLocomotion Instance { get; private set; }
 
     [SerializeField] private float moveSpeed = 7f;
     //[SerializeField] private float rotateSpeed = 1f;
 
-
+    [SerializeField] private GameObject cinemachineCamera;
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private float mouseSensitivity = 2f;
     [SerializeField] private float lookRange = 80f;
+    [SerializeField] private bool canMove = true;
     private float verticalRotation = 0f;
     private Rigidbody rb;
 
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
@@ -24,10 +31,13 @@ public class PlayerLocomotion : MonoBehaviour
 
     private void FixedUpdate()
     {
-        HandleMovement();
+        if (canMove)
+        {
+            HandleMovement();
 
-        //Nếu muốn di chuyển camera tự code thì gỡ comment dòng dưới và xóa các component cinemachine
-        //HandleCamera();
+            //Nếu muốn di chuyển camera tự code thì gỡ comment dòng dưới và xóa các component cinemachine
+            //HandleCamera();
+        }
 
     }
 
@@ -68,4 +78,10 @@ public class PlayerLocomotion : MonoBehaviour
         cameraTransform.localRotation = Quaternion.Euler(verticalRotation * mouseSensitivity, cameraTransform.localEulerAngles.y, 0);
     }
 
+
+    public void SetCanMove(bool canMove)
+    {
+        this.canMove = canMove;
+        cinemachineCamera.SetActive(canMove);
+    }
 }
