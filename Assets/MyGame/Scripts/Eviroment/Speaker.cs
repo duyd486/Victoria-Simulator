@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.Networking;
 
 public class Speaker : MonoBehaviour, IInteractable
 {
@@ -12,12 +15,28 @@ public class Speaker : MonoBehaviour, IInteractable
     }
     public void Interact()
     {
-        string songName = PlayerInteract.Instance.GetSongName();
-        if (songName.Length > 0)
+        if (PlayerInteract.Instance.GetIsCarryCd())
         {
-            AudioClip clip = Resources.Load<AudioClip>(songName);
-            if (clip != null)
+            Song song = PlayerInteract.Instance.GetPlayerCd();
+            Debug.Log(song.song_url);
+            StartCoroutine(PlayAudioFromURL(song.song_url));
+        }
+        else
+        {
+            // Dung nhac
+        }
+    }
+
+    IEnumerator PlayAudioFromURL(string url)
+    {
+        using (UnityWebRequest response = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.MPEG))
+        {
+            yield return response.SendWebRequest();
+
+
+            if (response.result == UnityWebRequest.Result.Success)
             {
+                AudioClip clip = DownloadHandlerAudioClip.GetContent(response);
                 audio.clip = clip;
                 audio.Play();
                 Debug.Log("Now Playing: " + clip.name);
@@ -26,8 +45,9 @@ public class Speaker : MonoBehaviour, IInteractable
             }
             else
             {
-                Debug.LogError("Không tìm thấy nhạc trong Resources!");
+                Debug.LogError(response.error);
             }
         }
     }
+
 }

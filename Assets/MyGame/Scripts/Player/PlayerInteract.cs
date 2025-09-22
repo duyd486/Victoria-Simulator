@@ -10,6 +10,8 @@ public class PlayerInteract : MonoBehaviour
 
     [SerializeField] public bool canInteract = true;
 
+    public bool isCarryCd = false;
+
     [SerializeField] private Song song;
 
     [SerializeField] private Renderer cd;
@@ -55,23 +57,27 @@ public class PlayerInteract : MonoBehaviour
 
     public string GetSongName()
     {
-        return song.songName;
+        return song.name;
     }
 
     public void SetCd(Song song)
     {
         this.song = song;
-        if (song.thumbnail != null)
-        {
+        //if (song.thumbnail != null)
+        //{
             ShowCd();
-            cd.material.mainTexture = song.thumbnail;
+            //cd.material.mainTexture = song.thumbnail;
             CdPickerUI.Instance.Hide();
-            Debug.Log("Loaded cover from Resources!");
-        }
-        else
-        {
-            Debug.LogError("Không tìm thấy ảnh cover trong Resources/");
-        }
+            //Debug.Log("Loaded cover from Resources!");
+        //}
+        //else
+        //{
+        //    Debug.LogError("Không tìm thấy ảnh cover trong Resources/");
+        //}
+    }
+    public Song GetPlayerCd()
+    {
+        return song;
     }
 
     public void SetInteractable(bool canInter)
@@ -82,14 +88,20 @@ public class PlayerInteract : MonoBehaviour
     public void HideCd()
     {
         cd.gameObject.SetActive(false);
+        isCarryCd = false;
     }
     public void ShowCd()
     {
         cd.gameObject.SetActive(true);
+        isCarryCd = true;
     }
 
     public bool GetCanInteract()
     {
         return canInteractObject;
+    }
+    public bool GetIsCarryCd()
+    {
+        return isCarryCd;
     }
 }

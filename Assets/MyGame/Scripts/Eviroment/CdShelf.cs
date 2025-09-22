@@ -11,7 +11,11 @@ public class CdShelf : MonoBehaviour, IInteractable
     {
         if(shelfArtist.name.Length > 0)
         {
-            CdPickerUI.Instance.Show(shelfArtist);
+            StartCoroutine(ApiManager.Instance.GetSongRequest(shelfArtist, () =>
+            {
+                CdPickerUI.Instance.Show(shelfArtist);
+            }));
+
         }
         else
         {
@@ -19,4 +23,9 @@ public class CdShelf : MonoBehaviour, IInteractable
         }
     }
 
+
+    public void SetArtist(Artist artist)
+    {
+        shelfArtist = artist;
+    }
 }

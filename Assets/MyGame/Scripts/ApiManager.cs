@@ -1,7 +1,80 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+
+public class ApiManager : MonoBehaviour
+{
+    public static ApiManager Instance { get; private set; }
+
+    public List<Artist> artistList;
+
+    private void Awake()
+    {
+        Instance = this;
+        StartCoroutine(GetArtistsRequest());
+    }
+
+    void Start()
+    {
+        //StartCoroutine(GetArtistsRequest());
+
+        //Artist artist = new Artist();
+        //artist.id = 2;
+        //StartCoroutine(GetSongRequest(artist));
+    }
+
+    public IEnumerator GetArtistsRequest()
+    {
+        using (UnityWebRequest response = UnityWebRequest.Get("http://localhost:8000/api/artists"))
+        {
+            yield return response.SendWebRequest();
+
+            if(response.result == UnityWebRequest.Result.Success)
+            {
+                string json = response.downloadHandler.text;
+
+                RootArtist artistResponse = JsonUtility.FromJson<RootArtist>(json);
+
+                this.artistList = artistResponse.data.artists;
+            }
+            else
+            {
+                Debug.LogError(response.error);
+            }
+        }
+    }
+
+
+    public IEnumerator GetSongRequest(Artist artist, Action ShowCd)
+    {
+        using (UnityWebRequest response = UnityWebRequest.Get("http://localhost:8000/api/artists/" + artist.id))
+        {
+            yield return response.SendWebRequest();
+
+            if (response.result == UnityWebRequest.Result.Success)
+            {
+                string json = response.downloadHandler.text;
+
+                RootSong songResponse = JsonUtility.FromJson<RootSong>(json);
+
+                foreach(Artist artist1 in artistList)
+                {
+                    if(artist1.id == artist.id)
+                    {
+                        artist1.songs = songResponse.data.user.songs;
+                    }
+                }
+                ShowCd();
+            }
+            else
+            {
+                Debug.LogError(response.error);
+            }
+        }
+    }
+}
 
 [System.Serializable]
 public class ArtistData
@@ -22,7 +95,7 @@ public class RootArtist
 [System.Serializable]
 public class SongData
 {
-    public List<Artist> artists;
+    public Artist user;
     public int total;
 }
 
@@ -32,38 +105,4 @@ public class RootSong
     public bool success;
     public string message;
     public SongData data;
-}
-
-public class ApiManager : MonoBehaviour
-{
-    void Start()
-    {
-        StartCoroutine(GetArtistsRequest());
-    }
-
-    IEnumerator GetArtistsRequest()
-    {
-        using (UnityWebRequest response = UnityWebRequest.Get("http://localhost:8000/api/artists"))
-        {
-            yield return response.SendWebRequest();
-
-            if(response.result == UnityWebRequest.Result.Success)
-            {
-                Debug.Log(response.downloadHandler.text);
-
-                string json = response.downloadHandler.text;
-
-                RootArtist artistResponse = JsonUtility.FromJson<RootArtist>(json);
-
-                foreach(Artist artist in artistResponse.data.artists)
-                {
-                    Debug.Log(artist.name);
-                }
-            }
-            else
-            {
-                Debug.LogError(response.error);
-            }
-        }
-    }
 }
