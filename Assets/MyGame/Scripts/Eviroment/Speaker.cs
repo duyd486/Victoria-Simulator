@@ -7,6 +7,8 @@ public class Speaker : MonoBehaviour, IInteractable
 {
     [SerializeField] private new AudioSource audio;
     [SerializeField] private ParticleSystem particle;
+    [SerializeField] private bool isPlaying = false;
+
     private void Start()
     {
         audio = GetComponent<AudioSource>();
@@ -24,6 +26,17 @@ public class Speaker : MonoBehaviour, IInteractable
         else
         {
             // Dung nhac
+            isPlaying = !isPlaying;
+            if(isPlaying)
+            {
+                audio.UnPause();
+                particle.Play();
+            }
+            else
+            {
+                audio.Pause();
+                particle.Pause();
+            }
         }
     }
 
@@ -42,6 +55,8 @@ public class Speaker : MonoBehaviour, IInteractable
                 Debug.Log("Now Playing: " + clip.name);
                 PlayerInteract.Instance.HideCd();
                 particle.Play();
+
+                isPlaying = true;
             }
             else
             {
