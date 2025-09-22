@@ -9,7 +9,7 @@ public class CdShelf : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if(shelfArtist.artistName.Length > 0)
+        if(shelfArtist.name.Length > 0)
         {
             CdPickerUI.Instance.Show(shelfArtist);
         }

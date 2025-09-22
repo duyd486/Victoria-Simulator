@@ -3,6 +3,8 @@ using UnityEngine;
 [System.Serializable]
 public class Artist
 {
-    public string artistName;
-    public Song[] songs;
+    public int id;
+    public string name;
+    public int songs_count;
+    public Song[] songs;    
 }
