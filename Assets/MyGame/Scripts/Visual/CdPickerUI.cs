@@ -44,8 +44,6 @@ public class CdPickerUI : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         gameObject.SetActive(true);
 
-
-
         artistNameTxt.text = artist.name;
         foreach(Song song in artist.songs)
         {

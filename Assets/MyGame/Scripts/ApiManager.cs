@@ -17,11 +17,7 @@ public class ApiManager : MonoBehaviour
 
     void Start()
     {
-        //StartCoroutine(GetArtistsRequest());
 
-        //Artist artist = new Artist();
-        //artist.id = 2;
-        //StartCoroutine(GetSongRequest(artist));
     }
 
     public IEnumerator GetArtistsRequest()
@@ -106,8 +102,6 @@ public class ApiManager : MonoBehaviour
         {
             yield return response.SendWebRequest();
             Debug.Log(response.result);
-
-
 
             if (response.result == UnityWebRequest.Result.Success)
             {
