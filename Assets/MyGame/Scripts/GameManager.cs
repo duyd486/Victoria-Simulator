@@ -9,6 +9,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CdShelf[] cdShelves;
     [SerializeField] private List<Artist> artistList;
 
+
+    [SerializeField] private bool lightRoom = true;
+    [SerializeField] private GameObject roomLightOb;
+    [SerializeField] private Material ledMaterial;
+    [SerializeField] private float itensity = 1.0f;
+
+
     private void Awake()
     {
         Instance = this;
@@ -22,6 +29,14 @@ public class GameManager : MonoBehaviour
         {
             cdShelves[i].SetArtist(artistList[i]);
         }
+    }
+
+    public void TurnLightSwitch()
+    {
+        lightRoom = !lightRoom;
+        roomLightOb.SetActive(lightRoom);
+        ledMaterial.EnableKeyword("_EMISSION");
+        ledMaterial.SetColor("_EmissionColor", Color.black);
     }
 
     public void SetArtistList(List<Artist> artistList)
