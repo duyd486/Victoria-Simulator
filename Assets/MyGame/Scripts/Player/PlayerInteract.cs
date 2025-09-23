@@ -9,12 +9,13 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private bool canInteractObject = false;
 
     [SerializeField] public bool canInteract = true;
+    [SerializeField] private Renderer cd;
+    [SerializeField] private Transform cdPref;
 
     public bool isCarryCd = false;
 
     [SerializeField] private Song song;
 
-    [SerializeField] private Renderer cd;
     
 
     private void Awake()
@@ -32,6 +33,15 @@ public class PlayerInteract : MonoBehaviour
         if(canInteract)
         {
             HandleInteract();
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (!isCarryCd) return;
+            if (song.thumbnail == null) return;
+            Transform cdTransform = Instantiate(cdPref, transform);
+            cdTransform.GetComponent<Renderer>().material.mainTexture = song.thumbnail;
+            cdTransform.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * 1000);
+            HideCd();
         }
     }
 

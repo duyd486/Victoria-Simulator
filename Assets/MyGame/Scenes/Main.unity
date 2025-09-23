@@ -32501,6 +32501,8 @@ MonoBehaviour:
   maxDistance: 6
   canInteractObject: 0
   canInteract: 0
+  cd: {fileID: 2066739141}
+  cdPref: {fileID: 761013957306751692, guid: ff63fdbfeccf4e94689bbc037fdc0311, type: 3}
   isCarryCd: 0
   song:
     id: 0
@@ -32509,7 +32511,6 @@ MonoBehaviour:
     thumbnail_url: 
     song_url: 
     user_id: 0
-  cd: {fileID: 2066739141}
 --- !u!4 &1653403976 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 821828665788856997, guid: 416be61ed0dab10479ef7af492d9658c, type: 3}
@@ -37679,7 +37680,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1960074630}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 802b33c1cc5f0884685758fde0b3642d, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -39411,7 +39412,6 @@ GameObject:
   - component: {fileID: 2066739139}
   - component: {fileID: 2066739142}
   - component: {fileID: 2066739141}
-  - component: {fileID: 2066739140}
   m_Layer: 0
   m_Name: CD
   m_TagString: Untagged
@@ -39434,27 +39434,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2135771611}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!65 &2066739140
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2066739138}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2066739141
 MeshRenderer:
   m_ObjectHideFlags: 0
