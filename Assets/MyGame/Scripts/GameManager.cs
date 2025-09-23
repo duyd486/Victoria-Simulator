@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool lightRoom = true;
     [SerializeField] private GameObject roomLightOb;
     [SerializeField] private Material ledMaterial;
-    [SerializeField] private float itensity = 1.0f;
     public bool isCellingFanRotate = true;
 
 
