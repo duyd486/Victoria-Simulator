@@ -15,8 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject roomLightOb;
     [SerializeField] private Material ledMaterial;
     [SerializeField] private float itensity = 1.0f;
-    [SerializeField] private List<GameObject> listCellingFan;
-    private bool isRotate = true;
+    public bool isCellingFanRotate = true;
 
 
     private void Awake()
@@ -44,11 +43,7 @@ public class GameManager : MonoBehaviour
 
     public void TurnCellingFan()
     {
-        isRotate = !isRotate;
-        foreach (GameObject cellingFanOb in listCellingFan)
-        {
-            cellingFanOb.GetComponent<CellingFan>().isRotate = isRotate;
-        }
+        isCellingFanRotate = !isCellingFanRotate;
     }
 
     public void SetArtistList(List<Artist> artistList)
