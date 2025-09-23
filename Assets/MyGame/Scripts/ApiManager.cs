@@ -34,7 +34,7 @@ public class ApiManager : MonoBehaviour
             if(response.result == UnityWebRequest.Result.Success)
             {
                 string json = response.downloadHandler.text;
-
+                Debug.Log(json);
                 RootArtist artistResponse = JsonUtility.FromJson<RootArtist>(json);
 
                 this.artistList = artistResponse.data.artists;
@@ -64,8 +64,15 @@ public class ApiManager : MonoBehaviour
                     if(artist1.id == artist.id)
                     {
                         artist1.songs = songResponse.data.user.songs;
+                        artist.songs = songResponse.data.user.songs;
                     }
                 }
+
+                foreach(Song song in songResponse.data.user.songs)
+                {
+                    Debug.Log(song.name);
+                }
+
                 ShowCd();
             }
             else

@@ -1,4 +1,5 @@
-﻿using Unity.VisualScripting;
+﻿using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -27,5 +28,9 @@ public class CdShelf : MonoBehaviour, IInteractable
     public void SetArtist(Artist artist)
     {
         shelfArtist = artist;
+    }
+    public void SetSongs(List<Song> songs)
+    {
+        shelfArtist.songs = songs;
     }
 }
