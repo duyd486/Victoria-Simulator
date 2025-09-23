@@ -34,6 +34,7 @@ public class CdSingleUI : MonoBehaviour
         if(song.thumbnail != null)
         {
             Sprite thumnailSprite = Sprite.Create(song.thumbnail, new Rect(0, 0, song.thumbnail.width, song.thumbnail.height), new Vector2(0.5f, 0.5f));
+            thumbnailBtn.image.preserveAspect = true;
             thumbnailBtn.image.sprite = thumnailSprite;
         }
 

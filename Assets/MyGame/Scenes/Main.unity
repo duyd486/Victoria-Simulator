@@ -31504,7 +31504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 042e8e89bae5fb54b96d251ff916be29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 15
+  moveSpeed: 10
   cinemachineCamera: {fileID: 1146804346}
   cameraTransform: {fileID: 2135771611}
   mouseSensitivity: 1
