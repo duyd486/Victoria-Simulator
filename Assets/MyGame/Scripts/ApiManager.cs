@@ -8,7 +8,6 @@ public class ApiManager : MonoBehaviour
 {
     public static ApiManager Instance { get; private set; }
 
-    public List<Artist> artistList;
 
     private void Awake()
     {
@@ -37,7 +36,7 @@ public class ApiManager : MonoBehaviour
                 Debug.Log(json);
                 RootArtist artistResponse = JsonUtility.FromJson<RootArtist>(json);
 
-                this.artistList = artistResponse.data.artists;
+                GameManager.Instance.SetArtistList(artistResponse.data.artists);
             }
             else
             {
@@ -59,7 +58,7 @@ public class ApiManager : MonoBehaviour
 
                 RootSong songResponse = JsonUtility.FromJson<RootSong>(json);
 
-                foreach(Artist artist1 in artistList)
+                foreach(Artist artist1 in GameManager.Instance.GetArtistList())
                 {
                     if(artist1.id == artist.id)
                     {
@@ -81,6 +80,47 @@ public class ApiManager : MonoBehaviour
             }
         }
     }
+
+    public IEnumerator PlayAudioFromURL(string url, Action<AudioClip> PlayAudio)
+    {
+        using (UnityWebRequest response = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.MPEG))
+        {
+            yield return response.SendWebRequest();
+
+
+            if (response.result == UnityWebRequest.Result.Success)
+            {
+                AudioClip clip = DownloadHandlerAudioClip.GetContent(response);
+                PlayAudio(clip);
+            }
+            else
+            {
+                Debug.LogError(response.error);
+            }
+        }
+    }
+
+    public IEnumerator GetTextureFromURL(string url, Action<Texture2D> SetTexture)
+    {
+        using (UnityWebRequest response = UnityWebRequestTexture.GetTexture(url))
+        {
+            yield return response.SendWebRequest();
+            Debug.Log(response.result);
+
+
+
+            if (response.result == UnityWebRequest.Result.Success)
+            {
+                Texture2D texture = DownloadHandlerTexture.GetContent(response);
+                SetTexture(texture);
+            }
+            else
+            {
+                Debug.LogError(response.error);
+            }
+        }
+    }
+
 }
 
 [System.Serializable]

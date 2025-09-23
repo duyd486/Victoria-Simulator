@@ -63,17 +63,16 @@ public class PlayerInteract : MonoBehaviour
     public void SetCd(Song song)
     {
         this.song = song;
-        //if (song.thumbnail != null)
-        //{
+        if (song.thumbnail != null)
+        {
             ShowCd();
-            //cd.material.mainTexture = song.thumbnail;
+            cd.material.mainTexture = song.thumbnail;
             CdPickerUI.Instance.Hide();
-            //Debug.Log("Loaded cover from Resources!");
-        //}
-        //else
-        //{
-        //    Debug.LogError("Không tìm thấy ảnh cover trong Resources/");
-        //}
+        }
+        else
+        {
+            Debug.LogError("Không tìm thấy ảnh cover");
+        }
     }
     public Song GetPlayerCd()
     {

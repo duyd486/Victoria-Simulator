@@ -6,6 +6,7 @@ using UnityEngine.Networking;
 public class Speaker : MonoBehaviour, IInteractable
 {
     [SerializeField] private new AudioSource audio;
+    [SerializeField] private AudioClip clip;
     [SerializeField] private ParticleSystem particle;
     [SerializeField] private bool isPlaying = false;
 
@@ -15,16 +16,17 @@ public class Speaker : MonoBehaviour, IInteractable
         particle = GetComponent<ParticleSystem>();
         particle.Stop();
     }
+
     public void Interact()
     {
         if (PlayerInteract.Instance.GetIsCarryCd())
         {
             Song song = PlayerInteract.Instance.GetPlayerCd();
-            Debug.Log(song.song_url);
-            StartCoroutine(PlayAudioFromURL(song.song_url));
+            StartCoroutine(ApiManager.Instance.PlayAudioFromURL(song.song_url, PlayAudio));
         }
         else
         {
+            if (clip == null) return;
             // Dung nhac
             isPlaying = !isPlaying;
             if(isPlaying)
@@ -40,29 +42,15 @@ public class Speaker : MonoBehaviour, IInteractable
         }
     }
 
-    IEnumerator PlayAudioFromURL(string url)
+    public void PlayAudio(AudioClip clip)
     {
-        using (UnityWebRequest response = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.MPEG))
-        {
-            yield return response.SendWebRequest();
+        audio.clip = clip;
+        audio.Play();
 
+        this.clip = clip;
 
-            if (response.result == UnityWebRequest.Result.Success)
-            {
-                AudioClip clip = DownloadHandlerAudioClip.GetContent(response);
-                audio.clip = clip;
-                audio.Play();
-                Debug.Log("Now Playing: " + clip.name);
-                PlayerInteract.Instance.HideCd();
-                particle.Play();
-
-                isPlaying = true;
-            }
-            else
-            {
-                Debug.LogError(response.error);
-            }
-        }
+        PlayerInteract.Instance.HideCd();
+        particle.Play();
+        isPlaying = true;
     }
-
 }

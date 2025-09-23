@@ -43,11 +43,20 @@ public class CdPickerUI : MonoBehaviour
         PlayerLocomotion.Instance.SetCanMove(false);
         Cursor.lockState = CursorLockMode.None;
         gameObject.SetActive(true);
+
+
+
         artistNameTxt.text = artist.name;
         foreach(Song song in artist.songs)
         {
-            CdSingleUI cdSingleUI = Instantiate(cdUI, cdUIContainer.transform);
-            cdSingleUI.UpdateCd(song);
+            StartCoroutine(ApiManager.Instance.GetTextureFromURL(song.thumbnail_url, (texture) =>
+            {
+                song.thumbnail = texture;
+                CdSingleUI cdSingleUI = Instantiate(cdUI, cdUIContainer.transform);
+
+                cdSingleUI.UpdateCd(song);
+            }));
+
         }
     }
     public void Hide()

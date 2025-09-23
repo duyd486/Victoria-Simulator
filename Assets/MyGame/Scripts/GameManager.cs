@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private CdShelf[] cdShelves;
+    public static GameManager Instance { get; private set; }
 
+    [SerializeField] private CdShelf[] cdShelves;
+    [SerializeField] private List<Artist> artistList;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
@@ -13,7 +20,16 @@ public class GameManager : MonoBehaviour
 
         for(int i = 0; i < cdShelves.Length; i++)
         {
-            cdShelves[i].SetArtist(ApiManager.Instance.artistList[i]);
+            cdShelves[i].SetArtist(artistList[i]);
         }
+    }
+
+    public void SetArtistList(List<Artist> artistList)
+    {
+        this.artistList = artistList;
+    }
+    public List<Artist> GetArtistList()
+    {
+        return this.artistList;
     }
 }
