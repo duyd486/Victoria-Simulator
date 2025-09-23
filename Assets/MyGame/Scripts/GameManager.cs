@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -14,6 +15,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject roomLightOb;
     [SerializeField] private Material ledMaterial;
     [SerializeField] private float itensity = 1.0f;
+    [SerializeField] private List<GameObject> listCellingFan;
+    private bool isRotate = true;
 
 
     private void Awake()
@@ -37,6 +40,15 @@ public class GameManager : MonoBehaviour
         roomLightOb.SetActive(lightRoom);
         ledMaterial.EnableKeyword("_EMISSION");
         ledMaterial.SetColor("_EmissionColor", Color.black);
+    }
+
+    public void TurnCellingFan()
+    {
+        isRotate = !isRotate;
+        foreach (GameObject cellingFanOb in listCellingFan)
+        {
+            cellingFanOb.GetComponent<CellingFan>().isRotate = isRotate;
+        }
     }
 
     public void SetArtistList(List<Artist> artistList)
