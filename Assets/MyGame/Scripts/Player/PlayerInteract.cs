@@ -16,7 +16,7 @@ public class PlayerInteract : MonoBehaviour
 
     [SerializeField] private Song song;
 
-    
+    [SerializeField] public bool isCarryHopGiayAn = false;
 
     private void Awake()
     {
