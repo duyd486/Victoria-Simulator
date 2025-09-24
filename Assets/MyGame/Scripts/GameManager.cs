@@ -11,10 +11,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<Artist> artistList;
 
 
-    [SerializeField] private bool lightRoom = true;
     [SerializeField] private GameObject roomLightOb;
     [SerializeField] private Material ledMaterial;
-    public bool isCellingFanRotate = true;
+    public bool lightRoom = true;
+    public bool isCellingFanRotate = false;
+
 
 
     private void Awake()
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
             cdShelves[i].SetArtist(artistList?[i]);
         }
     }
+
 
     public void TurnLightSwitch()
     {

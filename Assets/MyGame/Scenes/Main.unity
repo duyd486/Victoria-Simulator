@@ -1153,7 +1153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6711592685211810185, guid: 75300d8fb6f914fb4a1a973616993536, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.45451704
+      value: 0.43372288
       objectReference: {fileID: 0}
     - target: {fileID: 6711592685211810185, guid: 75300d8fb6f914fb4a1a973616993536, type: 3}
       propertyPath: m_LocalScale.z
@@ -1165,7 +1165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6711592685211810185, guid: 75300d8fb6f914fb4a1a973616993536, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3644067
+      value: 1.36
       objectReference: {fileID: 0}
     - target: {fileID: 6711592685211810185, guid: 75300d8fb6f914fb4a1a973616993536, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2946,7 +2946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6711592685211810185, guid: 75300d8fb6f914fb4a1a973616993536, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.45451704
+      value: 0.44135422
       objectReference: {fileID: 0}
     - target: {fileID: 6711592685211810185, guid: 75300d8fb6f914fb4a1a973616993536, type: 3}
       propertyPath: m_LocalScale.z
@@ -2958,7 +2958,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6711592685211810185, guid: 75300d8fb6f914fb4a1a973616993536, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3644067
+      value: 1.31
       objectReference: {fileID: 0}
     - target: {fileID: 6711592685211810185, guid: 75300d8fb6f914fb4a1a973616993536, type: 3}
       propertyPath: m_LocalPosition.z
@@ -33948,6 +33948,7 @@ MonoBehaviour:
     thumbnail_url: 
     song_url: 
     user_id: 0
+  isCarryHopGiayAn: 0
 --- !u!4 &1653403976 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 821828665788856997, guid: 416be61ed0dab10479ef7af492d9658c, type: 3}
@@ -36521,7 +36522,9 @@ MonoBehaviour:
   lightRoom: 1
   roomLightOb: {fileID: 423638128}
   ledMaterial: {fileID: 2100000, guid: badc771d6aa9bec4ebf589c987fdf6e5, type: 2}
-  isCellingFanRotate: 1
+  isCellingFanRotate: 0
+  fanSpeed: 0
+  onFanSpeed: 500
 --- !u!4 &1805990211 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3013749958899192190, guid: edb126c3ffde37e4e828bc40ba88d7ff, type: 3}
@@ -42638,7 +42641,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6304128072637991484, guid: fda74466ad77b7f46afba78589edc834, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8695652
+      value: 0.739913
       objectReference: {fileID: 0}
     - target: {fileID: 6304128072637991484, guid: fda74466ad77b7f46afba78589edc834, type: 3}
       propertyPath: m_LocalPosition.x
@@ -42646,7 +42649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6304128072637991484, guid: fda74466ad77b7f46afba78589edc834, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.7391304
+      value: -1.51
       objectReference: {fileID: 0}
     - target: {fileID: 6304128072637991484, guid: fda74466ad77b7f46afba78589edc834, type: 3}
       propertyPath: m_LocalPosition.z

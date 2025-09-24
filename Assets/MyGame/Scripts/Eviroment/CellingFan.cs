@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class CellingFan : MonoBehaviour
 {
-    [SerializeField] private float speed = 5f;
-
-    // Update is called once per frame
+    public float fanSpeed = 0f;
+    public float onFanSpeed = 500f;
     void Update()
     {
-        if (GameManager.Instance.isCellingFanRotate)
+        if (!GameManager.Instance.isCellingFanRotate && fanSpeed > 0)
         {
-            transform.Rotate(Vector3.up * Time.deltaTime * speed);
+            fanSpeed -= Time.deltaTime * 50;
         }
+        else if (fanSpeed < onFanSpeed)
+        {
+            fanSpeed += Time.deltaTime * 50;
+        }
+        transform.Rotate(Vector3.up * Time.deltaTime * fanSpeed);
     }
 }
