@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
         for(int i = 0; i < cdShelves.Length; i++)
         {
-            cdShelves[i].SetArtist(artistList[i]);
+            cdShelves[i].SetArtist(artistList?[i]);
         }
     }
 
