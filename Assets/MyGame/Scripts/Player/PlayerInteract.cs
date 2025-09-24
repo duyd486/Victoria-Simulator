@@ -36,6 +36,7 @@ public class PlayerInteract : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.F))
         {
+            disableHopGiayAn();
             if (!isCarryCd) return;
             if (song.thumbnail == null) return;
             Transform cdTransform = Instantiate(cdPref, transform);
@@ -112,5 +113,17 @@ public class PlayerInteract : MonoBehaviour
     public bool GetIsCarryCd()
     {
         return isCarryCd;
+    }
+
+    public void disableHopGiayAn()
+    {
+        foreach (Transform child in Camera.main.transform)
+        {
+            if (child.TryGetComponent(out HopGiayAn component))
+            {
+                component.gameObject.SetActive(false);
+                isCarryHopGiayAn = false;
+            }
+        }
     }
 }
