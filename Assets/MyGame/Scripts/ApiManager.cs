@@ -20,6 +20,27 @@ public class ApiManager : MonoBehaviour
 
     }
 
+    public IEnumerator PostPayment()
+    {
+        using (UnityWebRequest response = UnityWebRequest.Get("http://localhost:8000/api/payment"))
+        {
+            yield return response.SendWebRequest();
+
+            if (response.result == UnityWebRequest.Result.Success)
+            {
+                string json = response.downloadHandler.text;
+                Debug.Log(json);
+                RootArtist artistResponse = JsonUtility.FromJson<RootArtist>(json);
+
+                GameManager.Instance.SetArtistList(artistResponse.data.artists);
+            }
+            else
+            {
+                Debug.LogError(response.error);
+            }
+        }
+    }
+
     public IEnumerator GetArtistsRequest()
     {
         using (UnityWebRequest response = UnityWebRequest.Get("http://localhost:8000/api/artists"))
