@@ -15,7 +15,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1183949173484402290
 Transform:
@@ -45,6 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59f5b80c0dcc6a640b917484d6807d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shelfArtist:
+    id: 0
+    name: 
+    songs_count: 0
+    songs: []
 --- !u!1001 &278232409721541682
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -112,6 +117,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6226c37b58c4a7342849a3951a151e94, type: 3}
       propertyPath: m_Name
       value: Simple_CDshelf
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6226c37b58c4a7342849a3951a151e94, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

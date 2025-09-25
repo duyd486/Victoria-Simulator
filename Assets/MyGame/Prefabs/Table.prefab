@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1358173479762652852
 Transform:
@@ -96,9 +96,21 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7029948723529949830, guid: dc0ebf15b3f15b242956c8eee9c3a5e2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1018664272722485354, guid: dc0ebf15b3f15b242956c8eee9c3a5e2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dc0ebf15b3f15b242956c8eee9c3a5e2, type: 3}
       propertyPath: m_Name
       value: Indoor_Table
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc0ebf15b3f15b242956c8eee9c3a5e2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

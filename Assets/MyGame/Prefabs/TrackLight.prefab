@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &821828665788856997
 Transform:
@@ -40,6 +40,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 821828665788856997}
     m_Modifications:
+    - target: {fileID: -8839379888550176601, guid: 70c4a51040528354e894956694e8d7fd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 70c4a51040528354e894956694e8d7fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -88,13 +92,29 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: 70c4a51040528354e894956694e8d7fd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 70c4a51040528354e894956694e8d7fd, type: 3}
       propertyPath: m_Name
       value: tracklight
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 70c4a51040528354e894956694e8d7fd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886328681229256485, guid: 70c4a51040528354e894956694e8d7fd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5346295423169061459, guid: 70c4a51040528354e894956694e8d7fd, type: 3}
       propertyPath: m_CastShadows
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5734410761253976694, guid: 70c4a51040528354e894956694e8d7fd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7041997669902929852, guid: 70c4a51040528354e894956694e8d7fd, type: 3}
       propertyPath: m_CastShadows

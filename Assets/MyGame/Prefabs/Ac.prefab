@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8038522684895625231
 Transform:
@@ -103,6 +103,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8d304d7c7795d3d4789a90886a2a9dea, type: 3}
       propertyPath: m_Name
       value: AC_Indoor_low
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d304d7c7795d3d4789a90886a2a9dea, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
