@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,23 +20,46 @@ public class ApiManager : MonoBehaviour
 
     }
 
-    public IEnumerator PostPayment()
+    public IEnumerator PostPayment(Song song, Action<RootPayment> ShowQr)
     {
-        using (UnityWebRequest response = UnityWebRequest.Get("http://localhost:8000/api/payment"))
+        using (UnityWebRequest response = new UnityWebRequest("http://localhost:8000/api/payment?song_id=" + song.id, "POST"))
+        {
+            response.downloadHandler = new DownloadHandlerBuffer();
+            yield return response.SendWebRequest();
+
+            if (response.result == UnityWebRequest.Result.Success)
+            {
+                Debug.Log(response.downloadHandler?.text);
+                string json = response.downloadHandler.text;
+                RootPayment rootPayment = JsonUtility.FromJson<RootPayment>(json);
+                ShowQr(rootPayment);
+            }
+            else
+            {
+                Debug.LogError(response.error);
+            }
+        }
+    }
+
+    public IEnumerator HandlePaymentHeartBeat(string code, Action PaymentPaid)
+    {
+        using (UnityWebRequest response = UnityWebRequest.Get("http://localhost:8000/api/payment/" + code))
         {
             yield return response.SendWebRequest();
 
             if (response.result == UnityWebRequest.Result.Success)
             {
                 string json = response.downloadHandler.text;
-                Debug.Log(json);
-                RootArtist artistResponse = JsonUtility.FromJson<RootArtist>(json);
-
-                GameManager.Instance.SetArtistList(artistResponse.data.artists);
+                PaymentHeartBeatRoot heartBeatRoot = JsonUtility.FromJson<PaymentHeartBeatRoot>(json);
+                if(heartBeatRoot.data == "PAID")
+                {
+                    Debug.Log("Đã trả tiền");
+                    PaymentPaid();
+                }
             }
             else
             {
-                Debug.LogError(response.error);
+                Debug.LogError("Call Api thất bại");
             }
         }
     }
@@ -50,14 +73,13 @@ public class ApiManager : MonoBehaviour
             if(response.result == UnityWebRequest.Result.Success)
             {
                 string json = response.downloadHandler.text;
-                Debug.Log(json);
                 RootArtist artistResponse = JsonUtility.FromJson<RootArtist>(json);
-
                 GameManager.Instance.SetArtistList(artistResponse.data.artists);
+                Debug.Log("Api nghệ sĩ được lấy thành công");
             }
             else
             {
-                Debug.LogError(response.error);
+                Debug.LogError("Call Api thất bại");
             }
         }
     }
@@ -137,6 +159,38 @@ public class ApiManager : MonoBehaviour
     }
 
 }
+
+
+[System.Serializable]
+public class PaymentHeartBeatRoot
+{
+    public bool success;
+    public string message;
+    public string data;
+}
+
+[System.Serializable]
+public class PaymentData
+{
+    public string song_id;
+    public int order_code;
+    public int price;
+    public int status;
+    public string updated_at;
+    public string created_at;
+    public int id;
+    public string checkout_url;
+    public string code_url;
+}
+
+[System.Serializable]
+public class RootPayment
+{
+    public bool success;
+    public string message;
+    public PaymentData data;
+}
+
 
 [System.Serializable]
 public class ArtistData

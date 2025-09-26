@@ -14,6 +14,11 @@ public class CdPickerUI : MonoBehaviour
 
 
     public event EventHandler OnCancelClick;
+    public event EventHandler<OnBuyClickEventArgs> OnBuyClick;
+    public class OnBuyClickEventArgs : EventArgs
+    {
+        public Song song;
+    }
 
 
     private void Awake()
@@ -34,6 +39,14 @@ public class CdPickerUI : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void HandleOnBuyClick(Song song)
+    {
+        OnBuyClick?.Invoke(this, new OnBuyClickEventArgs
+        {
+            song = song
+        });
     }
 
     public void Show(Artist artist)

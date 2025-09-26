@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CdSingleUI : MonoBehaviour
 {
     [SerializeField] private Button thumbnailBtn;
+    [SerializeField] private Button buyBtn;
     [SerializeField] private TextMeshProUGUI songNameTxt;
     [SerializeField] private Song song;
 
@@ -14,6 +15,11 @@ public class CdSingleUI : MonoBehaviour
         thumbnailBtn.onClick.AddListener(() =>
         {
             PlayerInteract.Instance.SetCd(song);
+        });
+
+        buyBtn.onClick.AddListener(() =>
+        {
+            CdPickerUI.Instance.HandleOnBuyClick(song);
         });
 
         CdPickerUI.Instance.OnCancelClick += CdPickUI_OnCancelClick;
