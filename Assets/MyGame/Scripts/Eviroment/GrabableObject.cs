@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HopGiayAn : MonoBehaviour, IInteractable
+public class GrabableObject : MonoBehaviour, IInteractable
 {
     public void Interact()
     {

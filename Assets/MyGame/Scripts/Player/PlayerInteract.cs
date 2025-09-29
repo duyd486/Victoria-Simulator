@@ -1,4 +1,5 @@
 ﻿using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
@@ -11,12 +12,14 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] public bool canInteract = true;
     [SerializeField] private Renderer cd;
     [SerializeField] private Transform cdPref;
+    [SerializeField] private GameObject LeftHand;
+    private GameObject smt;
 
     public bool isCarryCd = false;
+    public bool isCarrySmt = false;
 
     [SerializeField] private Song song;
 
-    [SerializeField] public bool isCarryHopGiayAn = false;
 
     private void Awake()
     {
@@ -26,43 +29,75 @@ public class PlayerInteract : MonoBehaviour
     private void Start()
     {
         HideCd();
+        GameInput.Instance.OnInteractPress += GameInput_OnInteractPress;
+        GameInput.Instance.OnThrowPress += GameInput_OnThrowPress;
+    }
+
+    private void GameInput_OnThrowPress(object sender, EventArgs e)
+    {
+        ThrowObject();
+        if (!isCarryCd) return;
+        if (song.thumbnail == null) return;
+        Transform cdTransform = Instantiate(cdPref, transform);
+        cdTransform.GetComponent<Renderer>().material.mainTexture = song.thumbnail;
+        cdTransform.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * 1000);
+        HideCd();
+    }
+
+    private void GameInput_OnInteractPress(object sender, EventArgs e)
+    {
+        Vector3 screenCenter = new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0f);
+        Ray ray = Camera.main.ScreenPointToRay(screenCenter);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, maxDistance) && hit.transform.GetComponentInParent<IInteractable>() != null)
+        {
+            hit.transform.GetComponentInParent<IInteractable>().Interact();
+        }
     }
 
     private void Update()
     {
         if(canInteract)
         {
-            HandleInteract();
-        }
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            disableHopGiayAn();
-            if (!isCarryCd) return;
-            if (song.thumbnail == null) return;
-            Transform cdTransform = Instantiate(cdPref, transform);
-            cdTransform.GetComponent<Renderer>().material.mainTexture = song.thumbnail;
-            cdTransform.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * 1000);
-            HideCd();
+            HandleInteractVisual();
         }
     }
 
-    private void HandleInteract()
+    private void HandleInteractVisual()
     {
         Vector3 screenCenter = new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0f);
         Ray ray = Camera.main.ScreenPointToRay(screenCenter);
 
-        Debug.DrawRay(ray.origin, ray.direction * maxDistance, Color.red);
-
         if (Physics.Raycast(ray, out RaycastHit hit, maxDistance) && hit.transform.GetComponentInParent<IInteractable>() != null)
         {
             canInteractObject = true;
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                hit.transform.GetComponentInParent<IInteractable>().Interact();
-            }
         } else
         {
             canInteractObject = false;
+        }
+    }
+
+    public void GrabObject(GameObject smt)
+    {
+        // Object được grab phải là non-static nha
+        if(smt.TryGetComponent<Rigidbody>(out Rigidbody component))
+        {
+            Destroy(component);
+        }
+        smt.transform.SetParent(LeftHand.transform);
+        smt.transform.localPosition = Vector3.zero;
+        smt.transform.localRotation = Quaternion.identity;
+        this.smt = smt;
+
+    }
+    public void ThrowObject()
+    {
+        foreach (Transform child in LeftHand.transform)
+        {
+            child.SetParent(null);
+            isCarrySmt = false;
+            Rigidbody rb = child.AddComponent<Rigidbody>();
+            rb.AddForce(Camera.main.transform.forward * 1000);
         }
     }
 
@@ -115,15 +150,4 @@ public class PlayerInteract : MonoBehaviour
         return isCarryCd;
     }
 
-    public void disableHopGiayAn()
-    {
-        foreach (Transform child in Camera.main.transform)
-        {
-            if (child.TryGetComponent(out HopGiayAn component))
-            {
-                component.gameObject.SetActive(false);
-                isCarryHopGiayAn = false;
-            }
-        }
-    }
 }
