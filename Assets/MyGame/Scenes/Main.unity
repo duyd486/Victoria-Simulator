@@ -31572,11 +31572,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7202127157948247452, guid: e79c501a753b940859a7edf040591264, type: 3}
   m_PrefabInstance: {fileID: 1037378372}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1046223558 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6728019049774688610, guid: f9cdf2c6e9ce54861887147e95ded6d6, type: 3}
-  m_PrefabInstance: {fileID: 1286447238}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1047164155 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 821828665788856997, guid: 416be61ed0dab10479ef7af492d9658c, type: 3}
@@ -34024,8 +34019,7 @@ Transform:
   m_LocalPosition: {x: -1, y: -0.5, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1046223558}
+  m_Children: []
   m_Father: {fileID: 2135771611}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1120658500
@@ -39463,63 +39457,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3438913853355190758, guid: 493dffecb005ece4eabaa104e4801596, type: 3}
   m_PrefabInstance: {fileID: 1283816683}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1286447238
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1120177047}
-    m_Modifications:
-    - target: {fileID: 6728019049774688610, guid: f9cdf2c6e9ce54861887147e95ded6d6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6728019049774688610, guid: f9cdf2c6e9ce54861887147e95ded6d6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6728019049774688610, guid: f9cdf2c6e9ce54861887147e95ded6d6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6728019049774688610, guid: f9cdf2c6e9ce54861887147e95ded6d6, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6728019049774688610, guid: f9cdf2c6e9ce54861887147e95ded6d6, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6728019049774688610, guid: f9cdf2c6e9ce54861887147e95ded6d6, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6728019049774688610, guid: f9cdf2c6e9ce54861887147e95ded6d6, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6728019049774688610, guid: f9cdf2c6e9ce54861887147e95ded6d6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6728019049774688610, guid: f9cdf2c6e9ce54861887147e95ded6d6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6728019049774688610, guid: f9cdf2c6e9ce54861887147e95ded6d6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6897358862787943870, guid: f9cdf2c6e9ce54861887147e95ded6d6, type: 3}
-      propertyPath: m_Name
-      value: 'TissuePaperCup '
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f9cdf2c6e9ce54861887147e95ded6d6, type: 3}
 --- !u!1 &1289878028
 GameObject:
   m_ObjectHideFlags: 0
