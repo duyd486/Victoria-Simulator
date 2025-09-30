@@ -79,6 +79,7 @@ public class PlayerInteract : MonoBehaviour
 
     public void GrabObject(GameObject smt)
     {
+        if (isCarrySmt) return;
         // Object được grab phải là non-static nha
         if(smt.TryGetComponent<Rigidbody>(out Rigidbody component))
         {
@@ -88,8 +89,14 @@ public class PlayerInteract : MonoBehaviour
         smt.transform.localPosition = Vector3.zero;
         smt.transform.localRotation = Quaternion.identity;
         this.smt = smt;
-
+        isCarrySmt = true;
     }
+    public void GrabPrefab(GameObject pref)
+    {
+        GameObject newPref = Instantiate(pref);
+        GrabObject(newPref);
+    }
+
     public void ThrowObject()
     {
         foreach (Transform child in LeftHand.transform)
@@ -99,11 +106,6 @@ public class PlayerInteract : MonoBehaviour
             Rigidbody rb = child.AddComponent<Rigidbody>();
             rb.AddForce(Camera.main.transform.forward * 1000);
         }
-    }
-
-    public string GetSongName()
-    {
-        return song.name;
     }
 
     public void SetCd(Song song)

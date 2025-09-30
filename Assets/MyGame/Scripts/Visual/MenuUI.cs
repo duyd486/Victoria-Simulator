@@ -5,7 +5,9 @@ public class MenuUI : MonoBehaviour
 {
     public static MenuUI Instance { get; private set; }
 
+
     [SerializeField] private Button menuBtn;
+    [SerializeField] private GameObject BobaTeaPref;
 
     private void Awake()
     {
@@ -14,6 +16,7 @@ public class MenuUI : MonoBehaviour
         menuBtn.onClick.AddListener(() =>
         {
             Hide();
+            PlayerInteract.Instance.GrabPrefab(BobaTeaPref);
         });
     }
 
