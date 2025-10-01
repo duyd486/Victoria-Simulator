@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.HighDefinition;
@@ -11,7 +12,10 @@ public class WeatherManager : MonoBehaviour
     [SerializeField] private Texture afternoonSkyTexture;
     [SerializeField] private Texture nightSkyTexture;
 
+    [SerializeField] float skyNormalSpeed = 150;
+    [SerializeField] float skyChangeSpeed = 12000;
 
+    WindParameter.WindParamaterValue windParamater = new WindParameter.WindParamaterValue();
     private HDRISky hDRISky;
     private Quaternion targetRotation = Quaternion.Euler(60, 0, 0);
     private float speedChange = 1f;
@@ -26,6 +30,7 @@ public class WeatherManager : MonoBehaviour
 
     private void Start()
     {
+        windParamater.customValue = skyNormalSpeed;
         VolumeProfile volumeProfile = mainVolume.sharedProfile;
         if(volumeProfile.TryGet<HDRISky>(out HDRISky component))
         {
@@ -54,25 +59,45 @@ public class WeatherManager : MonoBehaviour
         switch (timeNow)
         {
             case TimeInDay.Morning:
+                StartCoroutine(ChangeSky(morningSkyTexture));
                 directionalLight.localRotation = Quaternion.identity;
-                hDRISky.hdriSky.Override(morningSkyTexture);
                 targetRotation = Quaternion.Euler(60, 0, 0);
                 speedChange = 0.5f;
                 timeNow = TimeInDay.Afternoon;
                 break;
             case TimeInDay.Afternoon:
-                hDRISky.hdriSky.Override(afternoonSkyTexture);
+                StartCoroutine(ChangeSky(afternoonSkyTexture));
                 targetRotation = Quaternion.Euler(32, 160, 120);
                 speedChange = 1f;
                 timeNow = TimeInDay.Night;
                 break;
             case TimeInDay.Night:
-                hDRISky.hdriSky.Override(nightSkyTexture);
+                StartCoroutine(ChangeSky(nightSkyTexture));
                 targetRotation = Quaternion.Euler(200, 0, 0);
                 speedChange = 1f;
                 timeNow = TimeInDay.Morning;
                 break;
         }
+    }
+
+    private IEnumerator ChangeSky(Texture newSky)
+    {
+        windParamater.customValue = skyChangeSpeed;
+
+        hDRISky.scrollSpeed.Override(windParamater);
+        
+        yield return new WaitForSeconds(1);
+
+        hDRISky.hdriSky.Override(newSky);
+
+
+        yield return new WaitForSeconds(1);
+
+        windParamater.customValue = skyNormalSpeed;
+
+        hDRISky.scrollSpeed.Override(windParamater);
+
+
     }
 
 }
