@@ -1625,7 +1625,7 @@ Light:
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 56.853554}
   m_UseBoundingSphereOverride: 1
-  m_UseViewFrustumForShadowCasterCull: 1
+  m_UseViewFrustumForShadowCasterCull: 0
   m_ForceVisible: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -4731,7 +4731,7 @@ Light:
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 102.42641}
   m_UseBoundingSphereOverride: 1
-  m_UseViewFrustumForShadowCasterCull: 1
+  m_UseViewFrustumForShadowCasterCull: 0
   m_ForceVisible: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -31489,6 +31489,9 @@ MonoBehaviour:
   morningSkyTexture: {fileID: 8900000, guid: 1cde0e200e792cb4491204276a656490, type: 3}
   afternoonSkyTexture: {fileID: 8900000, guid: 956067292f130cc4aa490752a3e4d4f5, type: 3}
   nightSkyTexture: {fileID: 8900000, guid: b8a1e2a1852866e4a8d84842ed1fd892, type: 3}
+  skyNormalSpeed: 200
+  skyChangeSpeed: 4000
+  leafParticle: {fileID: 1141201828}
 --- !u!4 &1022299825
 Transform:
   m_ObjectHideFlags: 0
@@ -31501,7 +31504,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1141201829}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1023453926
@@ -35108,6 +35112,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9fc9d2d0a7b3fc48b944d066a881fc6, type: 3}
+--- !u!1 &1141201828 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8950113156892360716, guid: 06d37d67d893bd64bba5af965ac73348, type: 3}
+  m_PrefabInstance: {fileID: 926053993639734667}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1141201829 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4904923181609988761, guid: 06d37d67d893bd64bba5af965ac73348, type: 3}
+  m_PrefabInstance: {fileID: 926053993639734667}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1141321660
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66428,6 +66442,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59f5b80c0dcc6a640b917484d6807d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &926053993639734667
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1022299825}
+    m_Modifications:
+    - target: {fileID: 2851414497575352446, guid: 06d37d67d893bd64bba5af965ac73348, type: 3}
+      propertyPath: 'CollisionModule.m_Planes.Array.data[0]'
+      value: 
+      objectReference: {fileID: 430013198}
+    - target: {fileID: 4904923181609988761, guid: 06d37d67d893bd64bba5af965ac73348, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904923181609988761, guid: 06d37d67d893bd64bba5af965ac73348, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 22.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904923181609988761, guid: 06d37d67d893bd64bba5af965ac73348, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904923181609988761, guid: 06d37d67d893bd64bba5af965ac73348, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904923181609988761, guid: 06d37d67d893bd64bba5af965ac73348, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904923181609988761, guid: 06d37d67d893bd64bba5af965ac73348, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904923181609988761, guid: 06d37d67d893bd64bba5af965ac73348, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904923181609988761, guid: 06d37d67d893bd64bba5af965ac73348, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904923181609988761, guid: 06d37d67d893bd64bba5af965ac73348, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904923181609988761, guid: 06d37d67d893bd64bba5af965ac73348, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950113156892360716, guid: 06d37d67d893bd64bba5af965ac73348, type: 3}
+      propertyPath: m_Name
+      value: LeafParticle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 06d37d67d893bd64bba5af965ac73348, type: 3}
 --- !u!1001 &1270505457773259493
 PrefabInstance:
   m_ObjectHideFlags: 0

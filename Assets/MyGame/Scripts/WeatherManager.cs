@@ -8,17 +8,13 @@ public class WeatherManager : MonoBehaviour
     [SerializeField] private Transform directionalLight;
     [SerializeField] private Volume mainVolume;
 
+    [Header("Time In Day")]
     [SerializeField] private Texture morningSkyTexture;
     [SerializeField] private Texture afternoonSkyTexture;
     [SerializeField] private Texture nightSkyTexture;
 
     [SerializeField] float skyNormalSpeed = 150;
     [SerializeField] float skyChangeSpeed = 12000;
-
-    WindParameter.WindParamaterValue windParamater = new WindParameter.WindParamaterValue();
-    private HDRISky hDRISky;
-    private Quaternion targetRotation = Quaternion.Euler(60, 0, 0);
-    private float speedChange = 1f;
 
     private enum TimeInDay
     {
@@ -27,6 +23,18 @@ public class WeatherManager : MonoBehaviour
         Night,
     }
     private TimeInDay timeNow = TimeInDay.Morning;
+
+    private WindParameter.WindParamaterValue windParamater = new WindParameter.WindParamaterValue();
+    private HDRISky hDRISky;
+    private Quaternion targetRotation = Quaternion.Euler(60, 0, 0);
+    private float speedChange = 1f;
+
+    [Header("Weather")]
+    [SerializeField] private GameObject leafParticle;
+
+
+
+
 
     private void Start()
     {
@@ -53,6 +61,8 @@ public class WeatherManager : MonoBehaviour
             ChangeTimeInDay();
         }
     }
+
+
 
     void ChangeTimeInDay()
     {
