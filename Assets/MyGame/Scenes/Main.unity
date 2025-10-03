@@ -296,6 +296,10 @@ PrefabInstance:
       value: ShortSpeaker
       objectReference: {fileID: 0}
     - target: {fileID: 69283895070691560, guid: 8fe7752a043012d499fc7beb1f0c9867, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 69283895070691560, guid: 8fe7752a043012d499fc7beb1f0c9867, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -1066,6 +1070,10 @@ PrefabInstance:
       value: Grass
       objectReference: {fileID: 0}
     - target: {fileID: 5717236260517025375, guid: d3c9a2f740957d64a83c91676f1f63c1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717236260517025375, guid: d3c9a2f740957d64a83c91676f1f63c1, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -1625,7 +1633,7 @@ Light:
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 22.353554}
   m_UseBoundingSphereOverride: 1
-  m_UseViewFrustumForShadowCasterCull: 1
+  m_UseViewFrustumForShadowCasterCull: 0
   m_ForceVisible: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -2179,6 +2187,10 @@ PrefabInstance:
     - target: {fileID: 3502246650471068733, guid: bcafb082d0b0248d0bf5ef761aa3dd13, type: 3}
       propertyPath: m_Name
       value: SeatCushion (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3502246650471068733, guid: bcafb082d0b0248d0bf5ef761aa3dd13, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3502246650471068733, guid: bcafb082d0b0248d0bf5ef761aa3dd13, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2998,6 +3010,10 @@ PrefabInstance:
     - target: {fileID: 6278008879830926611, guid: 65967b7cd38a749d7a3b43f0cdef475a, type: 3}
       propertyPath: m_Name
       value: OutdoorChair (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278008879830926611, guid: 65967b7cd38a749d7a3b43f0cdef475a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6278008879830926611, guid: 65967b7cd38a749d7a3b43f0cdef475a, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3853,7 +3869,7 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 0.96098113, g: 1, b: 0, a: 1}
-  m_Intensity: 400
+  m_Intensity: 500
   m_Range: 10
   m_SpotAngle: 150
   m_InnerSpotAngle: 21.80208
@@ -4739,7 +4755,7 @@ Light:
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 29.213203}
   m_UseBoundingSphereOverride: 1
-  m_UseViewFrustumForShadowCasterCull: 1
+  m_UseViewFrustumForShadowCasterCull: 0
   m_ForceVisible: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -5392,6 +5408,10 @@ PrefabInstance:
       value: ShortSpeaker (1)
       objectReference: {fileID: 0}
     - target: {fileID: 69283895070691560, guid: 8fe7752a043012d499fc7beb1f0c9867, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 69283895070691560, guid: 8fe7752a043012d499fc7beb1f0c9867, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -5842,6 +5862,10 @@ PrefabInstance:
     - target: {fileID: 3502246650471068733, guid: bcafb082d0b0248d0bf5ef761aa3dd13, type: 3}
       propertyPath: m_Name
       value: SeatCushion (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3502246650471068733, guid: bcafb082d0b0248d0bf5ef761aa3dd13, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3502246650471068733, guid: bcafb082d0b0248d0bf5ef761aa3dd13, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7053,6 +7077,10 @@ PrefabInstance:
     - target: {fileID: 3670110396589390345, guid: 5345d2d9a809c4457af8cef9333551b9, type: 3}
       propertyPath: m_Name
       value: 'Carpet '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670110396589390345, guid: 5345d2d9a809c4457af8cef9333551b9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3670110396589390345, guid: 5345d2d9a809c4457af8cef9333551b9, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -8997,6 +9025,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DanLoa
       objectReference: {fileID: 0}
+    - target: {fileID: 6977819273740816285, guid: 55522c69b2e97614bb4e9a6d61b2987e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7909367095373849963, guid: 55522c69b2e97614bb4e9a6d61b2987e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.36
@@ -10825,6 +10857,10 @@ PrefabInstance:
     - target: {fileID: 6706332643827658140, guid: 78c236c9190f50640909334b7c4c9022, type: 3}
       propertyPath: m_Name
       value: Outdoor table (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706332643827658140, guid: 78c236c9190f50640909334b7c4c9022, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6706332643827658140, guid: 78c236c9190f50640909334b7c4c9022, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -19837,7 +19873,7 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 0.96098113, g: 1, b: 0, a: 1}
-  m_Intensity: 400
+  m_Intensity: 500
   m_Range: 10
   m_SpotAngle: 150
   m_InnerSpotAngle: 21.80208
@@ -21916,6 +21952,10 @@ PrefabInstance:
       value: Menu (2)
       objectReference: {fileID: 0}
     - target: {fileID: 729176801899549179, guid: 749eda1d71dc64bc48dba8d80b15a206, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 729176801899549179, guid: 749eda1d71dc64bc48dba8d80b15a206, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -22004,6 +22044,10 @@ PrefabInstance:
     - target: {fileID: 6706332643827658140, guid: 78c236c9190f50640909334b7c4c9022, type: 3}
       propertyPath: m_Name
       value: Outdoor table (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706332643827658140, guid: 78c236c9190f50640909334b7c4c9022, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6706332643827658140, guid: 78c236c9190f50640909334b7c4c9022, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -22421,7 +22465,7 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 0.96098113, g: 1, b: 0, a: 1}
-  m_Intensity: 400
+  m_Intensity: 500
   m_Range: 10
   m_SpotAngle: 150
   m_InnerSpotAngle: 21.80208
@@ -28283,6 +28327,10 @@ PrefabInstance:
       value: Victory_Signboard
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fdb2220a06c0d85418531284b1b2c502, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fdb2220a06c0d85418531284b1b2c502, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -29227,6 +29275,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BobaTea (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4170410061055180798, guid: 3b10f0379bcd15a4eaeb0ffaa395655e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4201897798899282823, guid: 3b10f0379bcd15a4eaeb0ffaa395655e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 26.01
@@ -29765,6 +29817,10 @@ PrefabInstance:
     - target: {fileID: 6897358862787943870, guid: f9cdf2c6e9ce54861887147e95ded6d6, type: 3}
       propertyPath: m_Name
       value: TissuePaperCup  (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897358862787943870, guid: f9cdf2c6e9ce54861887147e95ded6d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6897358862787943870, guid: f9cdf2c6e9ce54861887147e95ded6d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -31952,6 +32008,10 @@ PrefabInstance:
       value: BackrestPillow
       objectReference: {fileID: 0}
     - target: {fileID: 6419039088887946460, guid: e79c501a753b940859a7edf040591264, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419039088887946460, guid: e79c501a753b940859a7edf040591264, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -32369,6 +32429,10 @@ PrefabInstance:
     - target: {fileID: 6897358862787943870, guid: f9cdf2c6e9ce54861887147e95ded6d6, type: 3}
       propertyPath: m_Name
       value: 'TissuePaperCup '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897358862787943870, guid: f9cdf2c6e9ce54861887147e95ded6d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6897358862787943870, guid: f9cdf2c6e9ce54861887147e95ded6d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -32941,6 +33005,10 @@ PrefabInstance:
     - target: {fileID: 6897358862787943870, guid: f9cdf2c6e9ce54861887147e95ded6d6, type: 3}
       propertyPath: m_Name
       value: TissuePaperCup  (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897358862787943870, guid: f9cdf2c6e9ce54861887147e95ded6d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6897358862787943870, guid: f9cdf2c6e9ce54861887147e95ded6d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -35336,6 +35404,10 @@ PrefabInstance:
     - target: {fileID: 6706332643827658140, guid: 78c236c9190f50640909334b7c4c9022, type: 3}
       propertyPath: m_Name
       value: Outdoor table
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706332643827658140, guid: 78c236c9190f50640909334b7c4c9022, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6706332643827658140, guid: 78c236c9190f50640909334b7c4c9022, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -40433,6 +40505,10 @@ PrefabInstance:
       value: OutdoorChair (5)
       objectReference: {fileID: 0}
     - target: {fileID: 6278008879830926611, guid: 65967b7cd38a749d7a3b43f0cdef475a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278008879830926611, guid: 65967b7cd38a749d7a3b43f0cdef475a, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -41741,6 +41817,10 @@ PrefabInstance:
       value: Menu (1)
       objectReference: {fileID: 0}
     - target: {fileID: 729176801899549179, guid: 749eda1d71dc64bc48dba8d80b15a206, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 729176801899549179, guid: 749eda1d71dc64bc48dba8d80b15a206, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -41935,6 +42015,10 @@ PrefabInstance:
     - target: {fileID: 6278008879830926611, guid: 65967b7cd38a749d7a3b43f0cdef475a, type: 3}
       propertyPath: m_Name
       value: OutdoorChair
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278008879830926611, guid: 65967b7cd38a749d7a3b43f0cdef475a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6278008879830926611, guid: 65967b7cd38a749d7a3b43f0cdef475a, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -45535,6 +45619,10 @@ PrefabInstance:
       value: Outdoor table
       objectReference: {fileID: 0}
     - target: {fileID: 6706332643827658140, guid: 78c236c9190f50640909334b7c4c9022, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706332643827658140, guid: 78c236c9190f50640909334b7c4c9022, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -47628,6 +47716,10 @@ PrefabInstance:
       value: OutdoorChair (4)
       objectReference: {fileID: 0}
     - target: {fileID: 6278008879830926611, guid: 65967b7cd38a749d7a3b43f0cdef475a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278008879830926611, guid: 65967b7cd38a749d7a3b43f0cdef475a, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -49272,6 +49364,10 @@ PrefabInstance:
       value: OutdoorChair (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6278008879830926611, guid: 65967b7cd38a749d7a3b43f0cdef475a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278008879830926611, guid: 65967b7cd38a749d7a3b43f0cdef475a, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -50141,6 +50237,10 @@ PrefabInstance:
       value: Menu
       objectReference: {fileID: 0}
     - target: {fileID: 729176801899549179, guid: 749eda1d71dc64bc48dba8d80b15a206, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 729176801899549179, guid: 749eda1d71dc64bc48dba8d80b15a206, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -50683,6 +50783,10 @@ PrefabInstance:
       value: Marshall
       objectReference: {fileID: 0}
     - target: {fileID: 2459225188800493099, guid: 582f047cf9625904ca3e23b6e43535d4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2459225188800493099, guid: 582f047cf9625904ca3e23b6e43535d4, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -51095,6 +51199,10 @@ PrefabInstance:
       value: OutdoorChair (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6278008879830926611, guid: 65967b7cd38a749d7a3b43f0cdef475a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278008879830926611, guid: 65967b7cd38a749d7a3b43f0cdef475a, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -51382,6 +51490,10 @@ PrefabInstance:
     - target: {fileID: 6897358862787943870, guid: f9cdf2c6e9ce54861887147e95ded6d6, type: 3}
       propertyPath: m_Name
       value: TissuePaperCup  (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897358862787943870, guid: f9cdf2c6e9ce54861887147e95ded6d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6897358862787943870, guid: f9cdf2c6e9ce54861887147e95ded6d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -51839,13 +51951,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1661194270}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2108026608}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
 --- !u!114 &1661194273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52631,6 +52743,10 @@ PrefabInstance:
     - target: {fileID: 6419039088887946460, guid: e79c501a753b940859a7edf040591264, type: 3}
       propertyPath: m_Name
       value: BackrestPillow (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419039088887946460, guid: e79c501a753b940859a7edf040591264, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6419039088887946460, guid: e79c501a753b940859a7edf040591264, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -55037,6 +55153,10 @@ PrefabInstance:
       value: SeatCushion (2)
       objectReference: {fileID: 0}
     - target: {fileID: 3502246650471068733, guid: bcafb082d0b0248d0bf5ef761aa3dd13, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3502246650471068733, guid: bcafb082d0b0248d0bf5ef761aa3dd13, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -55262,6 +55382,10 @@ PrefabInstance:
     - target: {fileID: 3502246650471068733, guid: bcafb082d0b0248d0bf5ef761aa3dd13, type: 3}
       propertyPath: m_Name
       value: SeatCushion
+      objectReference: {fileID: 0}
+    - target: {fileID: 3502246650471068733, guid: bcafb082d0b0248d0bf5ef761aa3dd13, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3502246650471068733, guid: bcafb082d0b0248d0bf5ef761aa3dd13, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -56557,6 +56681,10 @@ PrefabInstance:
       value: Outdoor table (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6706332643827658140, guid: 78c236c9190f50640909334b7c4c9022, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706332643827658140, guid: 78c236c9190f50640909334b7c4c9022, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -56952,7 +57080,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5933598735538011638, guid: a23f30efcf74c8142b1ff9673cf9d88b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.15
+      value: 15.149999
       objectReference: {fileID: 0}
     - target: {fileID: 5933598735538011638, guid: a23f30efcf74c8142b1ff9673cf9d88b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -56986,9 +57114,17 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7140847656253677735, guid: a23f30efcf74c8142b1ff9673cf9d88b, type: 3}
+      propertyPath: m_ProbeSettings.influence.m_SphereRadius
+      value: 1.5267276
+      objectReference: {fileID: 0}
     - target: {fileID: 9071269364300848019, guid: a23f30efcf74c8142b1ff9673cf9d88b, type: 3}
       propertyPath: m_Name
       value: Mirror
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071269364300848019, guid: a23f30efcf74c8142b1ff9673cf9d88b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9071269364300848019, guid: a23f30efcf74c8142b1ff9673cf9d88b, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -62494,7 +62630,6 @@ Transform:
   - {fileID: 2114623252}
   - {fileID: 612473091}
   - {fileID: 364907358}
-  - {fileID: 2135304296}
   - {fileID: 1370137120}
   - {fileID: 490237763}
   - {fileID: 72536563}
@@ -62605,6 +62740,10 @@ PrefabInstance:
     - target: {fileID: 729176801899549179, guid: 749eda1d71dc64bc48dba8d80b15a206, type: 3}
       propertyPath: m_Name
       value: Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 729176801899549179, guid: 749eda1d71dc64bc48dba8d80b15a206, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 729176801899549179, guid: 749eda1d71dc64bc48dba8d80b15a206, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -63175,6 +63314,10 @@ PrefabInstance:
     - target: {fileID: 7089388589064994422, guid: 568313deecdd34254a0b6c3060735b8e, type: 3}
       propertyPath: m_Name
       value: Cai o
+      objectReference: {fileID: 0}
+    - target: {fileID: 7089388589064994422, guid: 568313deecdd34254a0b6c3060735b8e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7089388589064994422, guid: 568313deecdd34254a0b6c3060735b8e, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -65516,114 +65659,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129304294}
   m_CullTransparentMesh: 1
---- !u!1 &2135304295
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2135304296}
-  - component: {fileID: 2135304299}
-  - component: {fileID: 2135304298}
-  - component: {fileID: 2135304297}
-  m_Layer: 0
-  m_Name: Roof (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &2135304296
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2135304295}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 15.74, z: 5.53}
-  m_LocalScale: {x: 36.21, y: 3.0816088, z: 21.945456}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 2001631642}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2135304297
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2135304295}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &2135304298
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2135304295}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: fb6bfb5e3ebc095478481eddc2dfdb15, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &2135304299
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2135304295}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &2135725275
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66459,6 +66494,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1022299825}
     m_Modifications:
     - target: {fileID: 2851414497575352446, guid: 06d37d67d893bd64bba5af965ac73348, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2851414497575352446, guid: 06d37d67d893bd64bba5af965ac73348, type: 3}
       propertyPath: 'CollisionModule.m_Planes.Array.data[0]'
       value: 
       objectReference: {fileID: 430013198}
@@ -66570,6 +66609,10 @@ PrefabInstance:
     - target: {fileID: 3107786040105719401, guid: 46bdf96124956504396f532016c67e64, type: 3}
       propertyPath: m_Name
       value: RoundStair
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107786040105719401, guid: 46bdf96124956504396f532016c67e64, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3107786040105719401, guid: 46bdf96124956504396f532016c67e64, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -66748,6 +66791,10 @@ PrefabInstance:
     - target: {fileID: 3683061361484643258, guid: edb126c3ffde37e4e828bc40ba88d7ff, type: 3}
       propertyPath: m_Name
       value: Plant 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3683061361484643258, guid: edb126c3ffde37e4e828bc40ba88d7ff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3683061361484643258, guid: edb126c3ffde37e4e828bc40ba88d7ff, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -66944,6 +66991,10 @@ PrefabInstance:
     - target: {fileID: 2066407898687302151, guid: 801f78563acf63a43b8e5b05e4c15e85, type: 3}
       propertyPath: m_Name
       value: Ac
+      objectReference: {fileID: 0}
+    - target: {fileID: 2066407898687302151, guid: 801f78563acf63a43b8e5b05e4c15e85, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3126982005886713556, guid: 801f78563acf63a43b8e5b05e4c15e85, type: 3}
       propertyPath: m_LocalScale.x
@@ -67223,6 +67274,10 @@ PrefabInstance:
       value: Plant 4
       objectReference: {fileID: 0}
     - target: {fileID: 2640196576183035993, guid: 5bf12ec55ce09b849909b6e875852f89, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640196576183035993, guid: 5bf12ec55ce09b849909b6e875852f89, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -67308,6 +67363,10 @@ PrefabInstance:
       value: Plant 3
       objectReference: {fileID: 0}
     - target: {fileID: 6088009341528536827, guid: 70048ee209f80404e96e73cea29c5795, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088009341528536827, guid: 70048ee209f80404e96e73cea29c5795, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -67335,6 +67394,10 @@ PrefabInstance:
     - target: {fileID: 4170410061055180798, guid: 3b10f0379bcd15a4eaeb0ffaa395655e, type: 3}
       propertyPath: m_Name
       value: BobaTea
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170410061055180798, guid: 3b10f0379bcd15a4eaeb0ffaa395655e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4201897798899282823, guid: 3b10f0379bcd15a4eaeb0ffaa395655e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -67462,6 +67525,10 @@ PrefabInstance:
       value: Flower 1
       objectReference: {fileID: 0}
     - target: {fileID: 8484964127688715790, guid: 3698704fa834a704bb766e7c025d9595, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8484964127688715790, guid: 3698704fa834a704bb766e7c025d9595, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -67561,6 +67628,10 @@ PrefabInstance:
     - target: {fileID: 4406821957567395897, guid: d5fdbca0fc173f3489d4778e676a0cb7, type: 3}
       propertyPath: m_Name
       value: Flag
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406821957567395897, guid: d5fdbca0fc173f3489d4778e676a0cb7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4406821957567395897, guid: d5fdbca0fc173f3489d4778e676a0cb7, type: 3}
       propertyPath: m_StaticEditorFlags
