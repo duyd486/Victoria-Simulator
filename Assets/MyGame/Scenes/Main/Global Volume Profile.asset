@@ -68,7 +68,7 @@ MonoBehaviour:
     m_Value: 1
   fixedExposure:
     m_OverrideState: 0
-    m_Value: -5
+    m_Value: 3.674772
   compensation:
     m_OverrideState: 1
     m_Value: 0
@@ -258,7 +258,7 @@ MonoBehaviour:
     m_Value: 0
   hdriSky:
     m_OverrideState: 1
-    m_Value: {fileID: 8900000, guid: 1cde0e200e792cb4491204276a656490, type: 3}
+    m_Value: {fileID: 8900000, guid: b8a1e2a1852866e4a8d84842ed1fd892, type: 3}
   distortionMode:
     m_OverrideState: 1
     m_Value: 1
@@ -279,7 +279,7 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value:
       mode: 0
-      customValue: 150
+      customValue: 200
       additiveValue: 0
       multiplyValue: 0
   sunInitialRotation:

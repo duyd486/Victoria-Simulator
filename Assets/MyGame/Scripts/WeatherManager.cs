@@ -30,7 +30,25 @@ public class WeatherManager : MonoBehaviour
     private float speedChange = 1f;
 
     [Header("Weather")]
-    [SerializeField] private GameObject leafParticle;
+    [SerializeField] private ParticleSystem leafParticle;
+    [SerializeField] private ParticleSystem smallRainParticle;
+    [SerializeField] private ParticleSystem largeRainParticle;
+
+    private Light directionLight;
+    [SerializeField] private Light lightningLight;
+
+    [SerializeField] private float normalLightIntensity = 10f;
+    [SerializeField] private float rainLightIntensity = 5f;
+
+    private enum Weather
+    {
+        FallingLeaf,
+        SmallRain,
+        LargeRain,
+    }
+    private Weather currentWeather = Weather.FallingLeaf;
+
+    private bool isLightning = false;
 
 
 
@@ -38,15 +56,17 @@ public class WeatherManager : MonoBehaviour
 
     private void Start()
     {
+        directionLight = directionalLight.GetComponent<Light>();
         windParamater.customValue = skyNormalSpeed;
         VolumeProfile volumeProfile = mainVolume.sharedProfile;
         if(volumeProfile.TryGet<HDRISky>(out HDRISky component))
         {
             hDRISky = component;
         }
-        hDRISky.hdriSky.Override(morningSkyTexture);
-        targetRotation = Quaternion.Euler(60, 0, 0);
-        timeNow = TimeInDay.Afternoon;
+
+
+        ChangeTimeInDay();
+        ChangeWeather();
     }
 
     void Update()
@@ -56,9 +76,13 @@ public class WeatherManager : MonoBehaviour
             targetRotation,
             speedChange * Time.deltaTime
         );
-
+        
         if (Input.GetKeyDown(KeyCode.I)) {
             ChangeTimeInDay();
+        }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            ChangeWeather();
         }
     }
 
@@ -83,7 +107,7 @@ public class WeatherManager : MonoBehaviour
                 break;
             case TimeInDay.Night:
                 StartCoroutine(ChangeSky(nightSkyTexture));
-                targetRotation = Quaternion.Euler(200, 0, 0);
+                targetRotation = Quaternion.Euler(270, 0, 0);
                 speedChange = 1f;
                 timeNow = TimeInDay.Morning;
                 break;
@@ -106,8 +130,59 @@ public class WeatherManager : MonoBehaviour
         windParamater.customValue = skyNormalSpeed;
 
         hDRISky.scrollSpeed.Override(windParamater);
+    }
 
 
+    private void ChangeWeather()
+    {
+        DisableParticle();
+        switch (currentWeather)
+        {
+            case Weather.FallingLeaf:
+                directionLight.intensity = normalLightIntensity;
+                leafParticle.gameObject.SetActive(true);
+                currentWeather = Weather.SmallRain;
+                break;
+            case Weather.SmallRain:
+                directionLight.intensity = rainLightIntensity;
+                smallRainParticle.gameObject.SetActive(true);
+                currentWeather = Weather.LargeRain;
+                break;
+            case Weather.LargeRain:
+                isLightning = true;
+                directionLight.intensity = rainLightIntensity - 1;
+                largeRainParticle.gameObject.SetActive(true);
+                currentWeather = Weather.FallingLeaf;
+                StartCoroutine(PlayLightning());
+                break;
+        }
+    }
+
+    private IEnumerator PlayLightning()
+    {
+        while (isLightning)
+        {
+            float wait = Random.Range(3, 5);
+            yield return new WaitForSeconds(wait);
+
+            int flashCount = Random.Range(1, 4);
+            for (int i = 0; i < flashCount; i++)
+            {
+                lightningLight.gameObject.SetActive(true);
+                yield return new WaitForSeconds(Random.Range(0.05f, 0.15f));
+                lightningLight.gameObject.SetActive(false);
+                yield return new WaitForSeconds(Random.Range(0.05f, 0.2f));
+            }
+        }
+    }
+
+    private void DisableParticle()
+    {
+        isLightning = false;
+        foreach(Transform chil in transform)
+        {
+            chil.gameObject.SetActive(false);
+        }
     }
 
 }
