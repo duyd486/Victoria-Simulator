@@ -20,7 +20,7 @@ public class CdShelf : MonoBehaviour, IInteractable
         }
         else
         {
-            Debug.Log("This shelf doesnt have cd");
+            RuntimeUI.Instance.PushMessage("Tủ này không có đĩa", false);
         }
     }
 

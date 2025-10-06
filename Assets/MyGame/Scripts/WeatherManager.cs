@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.HighDefinition;
@@ -142,11 +142,13 @@ public class WeatherManager : MonoBehaviour
                 directionLight.intensity = normalLightIntensity;
                 leafParticle.gameObject.SetActive(true);
                 currentWeather = Weather.SmallRain;
+                RuntimeUI.Instance.PushMessage("Thời tiết đã đổi thành bình thường", false);
                 break;
             case Weather.SmallRain:
                 directionLight.intensity = rainLightIntensity;
                 smallRainParticle.gameObject.SetActive(true);
                 currentWeather = Weather.LargeRain;
+                RuntimeUI.Instance.PushMessage("Thời tiết đã đổi thành mưa nhỏ", false);
                 break;
             case Weather.LargeRain:
                 isLightning = true;
@@ -154,6 +156,7 @@ public class WeatherManager : MonoBehaviour
                 largeRainParticle.gameObject.SetActive(true);
                 currentWeather = Weather.FallingLeaf;
                 StartCoroutine(PlayLightning());
+                RuntimeUI.Instance.PushMessage("Thời tiết đã đổi thành mưa lớn", false);
                 break;
         }
     }

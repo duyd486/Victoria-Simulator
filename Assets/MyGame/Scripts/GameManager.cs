@@ -26,11 +26,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(ApiManager.Instance.GetArtistsRequest());
-
-        for(int i = 0; i < cdShelves.Length; i++)
-        {
-            cdShelves[i].SetArtist(artistList?[i]);
-        }
     }
 
 
@@ -50,6 +45,11 @@ public class GameManager : MonoBehaviour
     public void SetArtistList(List<Artist> artistList)
     {
         this.artistList = artistList;
+        for (int i = 0; i < cdShelves.Length; i++)
+        {
+            if (i >= artistList.Count) return;
+            cdShelves[i].SetArtist(artistList?[i]);
+        }
     }
     public List<Artist> GetArtistList()
     {

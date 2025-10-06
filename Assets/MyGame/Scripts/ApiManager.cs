@@ -12,7 +12,6 @@ public class ApiManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        StartCoroutine(GetArtistsRequest());
     }
 
     void Start()
@@ -29,14 +28,13 @@ public class ApiManager : MonoBehaviour
 
             if (response.result == UnityWebRequest.Result.Success)
             {
-                Debug.Log(response.downloadHandler?.text);
                 string json = response.downloadHandler.text;
                 RootPayment rootPayment = JsonUtility.FromJson<RootPayment>(json);
                 ShowQr(rootPayment);
             }
             else
             {
-                Debug.LogError(response.error);
+                RuntimeUI.Instance.PushMessage("Call Api thất bại", true);
             }
         }
     }
@@ -53,13 +51,12 @@ public class ApiManager : MonoBehaviour
                 PaymentHeartBeatRoot heartBeatRoot = JsonUtility.FromJson<PaymentHeartBeatRoot>(json);
                 if(heartBeatRoot.data == "PAID")
                 {
-                    Debug.Log("Đã trả tiền");
                     PaymentPaid();
                 }
             }
             else
             {
-                Debug.LogError("Call Api thất bại");
+                RuntimeUI.Instance.PushMessage("Call Api thất bại", true);
             }
         }
     }
@@ -75,11 +72,11 @@ public class ApiManager : MonoBehaviour
                 string json = response.downloadHandler.text;
                 RootArtist artistResponse = JsonUtility.FromJson<RootArtist>(json);
                 GameManager.Instance.SetArtistList(artistResponse.data.artists);
-                Debug.Log("Api nghệ sĩ được lấy thành công");
+                RuntimeUI.Instance.PushMessage("Lấy api artist thành công", false);
             }
             else
             {
-                Debug.LogError("Call Api thất bại");
+                RuntimeUI.Instance.PushMessage("Call Api nghệ sĩ thất bại", true);
             }
         }
     }
@@ -115,7 +112,7 @@ public class ApiManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError(response.error);
+                RuntimeUI.Instance.PushMessage("Call Api thất bại", true);
             }
         }
     }
@@ -134,7 +131,7 @@ public class ApiManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError(response.error);
+                RuntimeUI.Instance.PushMessage("Call Api thất bại", true);
             }
         }
     }
@@ -144,7 +141,6 @@ public class ApiManager : MonoBehaviour
         using (UnityWebRequest response = UnityWebRequestTexture.GetTexture(url))
         {
             yield return response.SendWebRequest();
-            Debug.Log(response.result);
 
             if (response.result == UnityWebRequest.Result.Success)
             {
@@ -153,7 +149,7 @@ public class ApiManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError(response.error);
+                RuntimeUI.Instance.PushMessage("Call Api thất bại", true);
             }
         }
     }
