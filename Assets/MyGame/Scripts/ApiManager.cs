@@ -14,9 +14,12 @@ public class ApiManager : MonoBehaviour
         Instance = this;
     }
 
-    void Start()
+    private void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            StartCoroutine(GetArtistsRequest());
+        }
     }
 
     public IEnumerator PostPayment(Song song, Action<RootPayment> ShowQr)
@@ -76,7 +79,7 @@ public class ApiManager : MonoBehaviour
             }
             else
             {
-                RuntimeUI.Instance.PushMessage("Call Api nghệ sĩ thất bại", true);
+                RuntimeUI.Instance.PushMessage("Call Api thất bại", true);
             }
         }
     }
@@ -101,11 +104,6 @@ public class ApiManager : MonoBehaviour
                         artist1.songs = songResponse.data.user.songs;
                         artist.songs = songResponse.data.user.songs;
                     }
-                }
-
-                foreach(Song song in songResponse.data.user.songs)
-                {
-                    Debug.Log(song.name);
                 }
 
                 ShowCd();
