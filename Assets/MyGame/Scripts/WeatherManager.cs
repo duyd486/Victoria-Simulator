@@ -98,18 +98,21 @@ public class WeatherManager : MonoBehaviour
                 targetRotation = Quaternion.Euler(60, 0, 0);
                 speedChange = 0.5f;
                 timeNow = TimeInDay.Afternoon;
+                RuntimeUI.Instance.PushMessage("Thời gian đã đổi thành sáng sớm", false);
                 break;
             case TimeInDay.Afternoon:
                 StartCoroutine(ChangeSky(afternoonSkyTexture));
                 targetRotation = Quaternion.Euler(32, 160, 120);
                 speedChange = 1f;
                 timeNow = TimeInDay.Night;
+                RuntimeUI.Instance.PushMessage("Thời gian đã đổi thành hoàng hôn", false);
                 break;
             case TimeInDay.Night:
                 StartCoroutine(ChangeSky(nightSkyTexture));
                 targetRotation = Quaternion.Euler(270, 0, 0);
                 speedChange = 1f;
                 timeNow = TimeInDay.Morning;
+                RuntimeUI.Instance.PushMessage("Thời gian đã đổi thành đêm khuya", false);
                 break;
         }
     }
